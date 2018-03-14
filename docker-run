@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker run --rm -it -v $(pwd):$(pwd) -w $(pwd) --user $UID:$GID $*
+docker run --rm -it -v /etc/hosts:/etc/hosts -v $(pwd):$(pwd) -w $(pwd) --user $UID:$GID $*
