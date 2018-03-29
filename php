@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker-run php:7.2-cli-alpine php $*
+docker-run php-local-images:$PHP_VERSION php $*
