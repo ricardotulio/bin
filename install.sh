@@ -26,4 +26,7 @@ docker tag prooph/composer:7.1 composer-local-images:php-7.1
 docker tag prooph/composer:7.2 composer-local-images:php-7.2
 docker tag prooph/composer:7.2 composer-local-images:php-7
 
-cp * ~/.local/bin/
+mkdir -p $HOME/.etc/php
+cp -a etc/php/* $HOME/.etc/php
+
+cp * $HOME/.local/bin/

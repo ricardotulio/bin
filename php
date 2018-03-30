@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker-run php-local-images:$PHP_VERSION php $*
+docker-run -v $HOME/.etc/php:/usr/local/etc/php php-local-images:$PHP_VERSION php $*
