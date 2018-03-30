@@ -1,3 +1,8 @@
 #!/bin/bash
 
-docker run --rm -it -v /etc/hosts:/etc/hosts -v $(pwd):$(pwd) -w $(pwd) --user $UID:$GID $*
+for ENV_PARAM in $(env)
+do
+  ENV_PARAMS="$ENV_PARAMS -e $ENV_PARAM"
+done
+
+docker run --rm -iti $ENV_PARAMS -v /etc/hosts:/etc/hosts -v $(pwd):$(pwd) -w $(pwd) --user $UID:$GID $*
