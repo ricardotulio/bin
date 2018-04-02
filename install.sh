@@ -29,4 +29,4 @@ docker tag prooph/composer:7.2 composer-local-images:php-7
 mkdir -p $HOME/.etc/php
 cp -a etc/php/* $HOME/.etc/php
 
-cp * $HOME/.local/bin/
+cp ./bin/* $HOME/.local/bin/
