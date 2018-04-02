@@ -1,3 +1,8 @@
 #!/bin/bash
 
+if [ -e .phpversion ]
+then
+    source .phpversion
+fi
+
 docker-run -v $HOME/.etc/php:/usr/local/etc/php php-local-images:$PHP_VERSION php $*
