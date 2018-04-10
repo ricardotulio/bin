@@ -1,0 +1,12 @@
+#!/bin/bash
+
+OPEN_VIM="nvim"
+
+tmux new-session \; \
+  send-keys $OPEN_VIM Space $1 C-m \; \
+  send-keys Space "ft" C-m \; \
+  split-window -v \; \
+  split-window -h \; \
+  resize-pane -D -t 1 8 \; \
+  select-pane -t 1 \; \
+  send-keys C-l
