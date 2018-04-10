@@ -1,9 +1,13 @@
 #!/bin/bash
 
-OPEN_VIM="nvim"
+if [ -n "$TMUX" ];
+then
+  nvim "$1"
+  exit
+fi
 
 tmux new-session \; \
-  send-keys $OPEN_VIM Space $1 C-m \; \
+  send-keys "nvim" Space $1 C-m \; \
   send-keys Space "ft" C-m \; \
   split-window -v \; \
   split-window -h \; \
